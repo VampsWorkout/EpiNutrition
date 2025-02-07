@@ -1,0 +1,84 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scanAnimation {
+    0% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 20px rgba(108, 99, 255, 0.3));
+    }
+    50% {
+        transform: scale(1.05);
+        filter: drop-shadow(0 0 40px rgba(0, 245, 255, 0.5));
+    }
+    100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 20px rgba(108, 99, 255, 0.3));
+    }
+}
+
+@keyframes glowPulse {
+    0% {
+        box-shadow: 0 0 20px rgba(108, 99, 255, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(0, 245, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(108, 99, 255, 0.3);
+    }
+}
+
+.hero-content {
+    animation: fadeIn 1s ease-out;
+}
+
+.feature-card {
+    animation: fadeIn 0.5s ease-out;
+    animation-fill-mode: both;
+}
+
+.feature-card:nth-child(1) { animation-delay: 0.1s; }
+.feature-card:nth-child(2) { animation-delay: 0.2s; }
+.feature-card:nth-child(3) { animation-delay: 0.3s; }
+.feature-card:nth-child(4) { animation-delay: 0.4s; }
+
+.scan-animation {
+    animation: scanAnimation 3s infinite ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.cta-button.primary {
+    animation: glowPulse 3s infinite ease-in-out;
+}
+
+.nav-links.active {
+    animation: slideIn 0.3s ease-out;
+}
+
+/* This fadeInUp animation in style.css conflicts with fadeIn in animations.css */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.showcase-item {
+    animation: fadeInUp 1s forwards;
+} 
